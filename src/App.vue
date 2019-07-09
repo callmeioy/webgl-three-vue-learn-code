@@ -7,7 +7,7 @@
             <template slot="title">{{item.cate}}</template>
             <el-menu-item-group>
               <el-menu-item index="1-1" v-for="(subItem,j) in item.items " :key="j">
-                <a href="#" @click="clickSideItem(subItem.route,subItem.title)">{{subItem.title}}</a>
+                <a href="#" @click="clickSideItem(subItem.title, subItem.com)">{{subItem.title}}</a>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -28,60 +28,68 @@
         </el-header>
 
         <el-main>
-          <el-table :data="tableData">
-            <el-table-column prop="date" label="日期" width="140">
-            </el-table-column>
-            <el-table-column prop="name" label="姓名" width="120">
-            </el-table-column>
-            <el-table-column prop="address" label="地址">
-            </el-table-column>
-          </el-table>
+          <div :is = "filterComponent"></div>
         </el-main>
       </el-container>
     </el-container>
   </div>
 </template>
-
 <script>
-export default {
-  name: "App",
-  components: {
-  },
-  data() {
-    const item = {
-      date: '2016-05-02',
-      name: '王小虎',
-      address: '上海市普陀区金沙江路 1518 弄'
-    };
-    return {
-      tableData: Array(20).fill(item),
-      aside: [
-        {
-          cate:'webgl',
-          items:
-            [
-              {title: '1.webgl三角形',route: '1'},
-              {title: '2.webgl平移',route: '1'}
-            ]
-        },
-        {
-          cate:'three',
-          items:
-            [
-              {title: '1.three',route: '1'},
-              {title: '2.three',route: '1'}
-            ]
-        }
-      ],
-      currentTitle: '123'
-    }
-  },
-  methods:{
-    clickSideItem (route, title){
-      this.currentTitle = title
+  import C1HelloWorld from './components/cesium/C1HelloWorld'
+  import T1HelloWorld from './components/three/T1HelloWorld'
+  import W1HelloWorld from './components/webgl/W1HelloWorld'
+  export default {
+    name: "App",
+    components: {
+      C1HelloWorld,T1HelloWorld,W1HelloWorld
     },
-  }
-};
+    data() {
+      return {
+        aside: [
+          {
+            cate:'webgl',
+            items:
+              [
+                {title: '1.webgl三角形',route: '1', com:'w1-hello-world'},
+                // {title: '2.webgl平移',route: '1'}
+              ]
+          },
+          {
+            cate:'three',
+            items:
+              [
+                {title: '1.three', com:'t1-hello-world'},
+                // {title: '2.three',route: '1'}
+              ]
+          },
+          {
+            cate:'cesium',
+            items:
+              [
+                {title: '1.cesium', com:'c1-hello-world'},
+                // {title: '2.cesium',route: '1'}
+              ]
+          },
+          {
+            cate:'babyicon',
+            items:
+                    [
+                      {title: '1.babyicon', com:'c1-hello-word'},
+                      // {title: '2.babyicon',route: '1'}
+                    ]
+          }
+        ],
+        currentTitle: '123',
+        filterComponent: ''
+      }
+    },
+    methods:{
+      clickSideItem (title,com){
+        this.currentTitle = title
+        this.filterComponent = com
+      },
+    }
+  };
 </script>
 
 <style>
