@@ -41,10 +41,14 @@
   import C1HelloWorld from './components/cesium/C1HelloWorld'
   import T1HelloWorld from './components/three/T1HelloWorld'
   import W1HelloWorld from './components/webgl/W1HelloWorld'
+  import W2Square from './components/webgl/W2Square'
+  import W3ShaderColor from './components/webgl/W3ShaderColor'
+  import W4Animate from './components/webgl/W4Animate'
+  import W5Cube from './components/webgl/W5Cube'
   export default {
     name: "App",
     components: {
-      C1HelloWorld,T1HelloWorld,W1HelloWorld
+      C1HelloWorld,T1HelloWorld,W1HelloWorld,W2Square, W3ShaderColor, W4Animate,W5Cube
     },
     data() {
       return {
@@ -53,8 +57,11 @@
             cate:'webgl',
             items:
               [
-                {title: '1.第一个 webgl', com:'w1-hello-world'},
-                // {title: '2.webgl平移',route: '1'}
+                {title: '1.webgl程序', com:'w1-hello-world'},
+                {title: '2.webgl 图形', com:'w2-square'},
+                {title: '3.webgl给顶点着色', com:'w3-shader-color'},
+                {title: '4.webgl循环渲染和空间变化', com:'w4-animate'},
+                {title: '5.webgl立方体', com:'w5-cube'},
               ]
           },
           {

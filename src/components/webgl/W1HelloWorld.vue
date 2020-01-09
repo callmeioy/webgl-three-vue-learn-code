@@ -10,6 +10,10 @@
         methods:{
 
         },
+        data(){
+            return {
+            }
+        },
         created(){
         },
         mounted(){

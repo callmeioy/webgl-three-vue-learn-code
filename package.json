@@ -1,5 +1,5 @@
 {
-  "name": "codesandbox",
+  "name": "webgl-three-cesium-learn",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "element-ui": "2.10.0",
+    "gl-matrix": "^3.0.0",
     "three": "^0.106.2",
     "vue": "2.6.10",
     "vue-router": "3.0.6",
