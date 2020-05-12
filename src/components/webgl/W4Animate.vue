@@ -230,7 +230,7 @@
                 }
                 // 下一帧 更新旋转参数
                 if(deltime) this.lastRotaion += deltime;
-                console.log(this.lastRotaion)
+                // console.log(this.lastRotaion)
 
             },
         }
