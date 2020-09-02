@@ -38,18 +38,10 @@
 
 </template>
 <script>
-  import C1HelloWorld from './components/cesium/C1HelloWorld'
-  import T1HelloWorld from './components/three/T1HelloWorld'
-  import W1HelloWorld from './components/webgl/W1HelloWorld'
-  import W2Square from './components/webgl/W2Square'
-  import W3ShaderColor from './components/webgl/W3ShaderColor'
-  import W4Animate from './components/webgl/W4Animate'
-  import W5Cube from './components/webgl/W5Cube'
+  import * as components from './components/components.js'
   export default {
     name: "App",
-    components: {
-      C1HelloWorld,T1HelloWorld,W1HelloWorld,W2Square, W3ShaderColor, W4Animate,W5Cube
-    },
+    components,
     data() {
       return {
         aside: [
