@@ -50,7 +50,7 @@
             items:
               [
                 {title: '1.webgl程序', com:'w1-hello-world'},
-                {title: '2.webgl 图形', com:'w2-square'},
+                {title: '2.webgl图形', com:'w2-square'},
                 {title: '3.webgl给顶点着色', com:'w3-shader-color'},
                 {title: '4.webgl循环渲染和空间变化', com:'w4-animate'},
                 {title: '5.webgl立方体', com:'w5-cube'},
